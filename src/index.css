@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Google Sans Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Rakyat Digital palette */
+  --color-brand: #8c00ff;
+  --color-brand-700: #6f00cc;
+  --color-ink: #2a1467;
+  --color-night: #120830;
+  --color-night-2: #1c0d48;
+  --color-royal: #2907ca;
+  --color-blue: #446eff;
+  --color-sky: #25a0e2;
+  --color-rose: #e0245e;
+  --color-lav: #f0ebff;
+  --color-lav-2: #efe7ff;
+  --color-mist: #f4f4f8;
+  --color-body: #333333;
+  --color-slate: #5b6b86;
+  --color-muted: #878a99;
+  --color-line: #eceaf2;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { background: #fff; color: var(--color-body); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.text-gradient {
+  background-image: linear-gradient(90deg, #8e54e9, #4776e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-brand-gradient { background-image: linear-gradient(90deg, #8e54e9, #4776e6); }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 28px;
+  box-shadow: 0 18px 60px rgba(42, 20, 103, 0.06);
+}
+.shadow-lift { box-shadow: 0 30px 60px rgba(42, 20, 103, 0.1), -34px 26px 50px rgba(68, 110, 255, 0.14); }
+.shadow-soft { box-shadow: 0 18px 60px rgba(42, 20, 103, 0.08); }
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.rise-in { opacity: 0; animation: rise-in 0.6s cubic-bezier(.2,.7,.2,1) forwards; }
+
+@keyframes caret { 50% { opacity: 0; } }
+.caret { animation: caret 1s steps(1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in { animation: none; opacity: 1; }
+  .caret { animation: none; }
+  html { scroll-behavior: auto; }
+}
