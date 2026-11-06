@@ -16,9 +16,9 @@ npm run build    # type-check + production build into dist/
 
 | Path | What |
 | --- | --- |
-| `src/data.ts` | Event content: registration link, sessions, syllabus, GCCOV, FAQ, logo paths |
-| `src/sections/` | One file per page section (Hero, Format, Syllabus, Samples, Sessions, Show & Tell, Certificate, FAQ/closing) |
-| `src/ui/` | Shared primitives, logo chip, and the hand-built UI mockups for the sample problems |
+| `src/data.ts` | Event content: registration link, nav, sessions, syllabus modules, FAQ, logo paths |
+| `src/sections/` | One file per page section (Hero, Format, Syllabus, Sessions, Show & Tell, Certificate, FAQ/closing) |
+| `src/ui/` | Shared primitives, footer organiser logos, and the sample Certificate of Shipping |
 | `src/components/backgrounds/` | React Bits backgrounds: Web Threads, Topography, Sliced Waves, Gradient ASCII |
 | `src/components/text/` | React Bits Depth Text (hero title) |
 | `public/logos/` | Official MyDIGITAL, KrackedDevs, ILMUchat and ILMUcode logos |

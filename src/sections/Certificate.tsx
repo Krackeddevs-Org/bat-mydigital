@@ -1,6 +1,6 @@
 import { BatteryCharging, GraduationCap, Laptop, Ticket } from 'lucide-react';
 import { Container, SectionTitle } from '../ui/primitives';
-import { CertificateMock } from '../ui/mockups';
+import { CertificateMock } from '../ui/CertificateMock';
 import { SEATS_PER_SESSION } from '../data';
 
 const ESSENTIALS = [

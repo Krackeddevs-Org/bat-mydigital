@@ -4,6 +4,7 @@ export const REGISTER_URL =
 /** Official logos, served from /public/logos. */
 export const LOGOS = {
   mydigital: { src: '/logos/mydigital.png', alt: 'MyDIGITAL Corporation' },
+  mydigitalWhite: { src: '/logos/mydigital-white.png', alt: 'MyDIGITAL Corporation' },
   mydigitalStacked: { src: '/logos/mydigital-stacked.png', alt: 'MyDIGITAL' },
   krackeddevs: { src: '/logos/krackeddevs.svg', alt: 'KrackedDevs' },
   ilmuMark: { src: '/logos/ilmu-mark.svg', alt: 'ILMU' },
@@ -15,7 +16,6 @@ export const LOGOS = {
 export const NAV = [
   { label: 'Format', href: '#format' },
   { label: 'Syllabus', href: '#syllabus' },
-  { label: 'Samples', href: '#samples' },
   { label: 'Sessions', href: '#sessions' },
   { label: 'Certificate', href: '#certificate' },
   { label: 'FAQ', href: '#faq' },
@@ -27,14 +27,17 @@ export type Session = {
   date: string;
   slot: 'Morning' | 'Afternoon';
   time: string;
+  /** No seats left: card shows Fully booked and no Register link. */
+  full?: boolean;
 };
 
 export const SESSIONS: Session[] = [
-  { id: '01', day: 'Tue', date: '17 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
-  { id: '02', day: 'Wed', date: '18 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
-  { id: '03', day: 'Wed', date: '18 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
-  { id: '04', day: 'Thu', date: '19 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
-  { id: '05', day: 'Thu', date: '19 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
+  { id: '01', day: 'Tue', date: '17 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM', full: true },
+  { id: '02', day: 'Tue', date: '17 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
+  { id: '03', day: 'Wed', date: '18 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
+  { id: '04', day: 'Wed', date: '18 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
+  { id: '05', day: 'Thu', date: '19 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
+  { id: '06', day: 'Thu', date: '19 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
 ];
 
 export const SEATS_PER_SESSION = 100;

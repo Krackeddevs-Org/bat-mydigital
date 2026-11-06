@@ -54,10 +54,6 @@ export default function ShowTell() {
               this afternoon.&rdquo;
             </p>
           </div>
-
-          <div className="absolute -right-2 -top-4 rotate-6 rounded-2xl bg-white px-3 py-2 text-sm font-semibold text-ink shadow-lift sm:-right-4">
-            👏 Everybody wins
-          </div>
         </div>
       </Container>
     </section>

@@ -2,7 +2,6 @@ import Nav from './sections/Nav';
 import Hero from './sections/Hero';
 import Format, { StatsStrip } from './sections/Format';
 import Syllabus from './sections/Syllabus';
-import Samples from './sections/Samples';
 import Sessions from './sections/Sessions';
 import ShowTell from './sections/ShowTell';
 import Certificate from './sections/Certificate';
@@ -23,7 +22,6 @@ export default function App() {
         <StatsStrip />
         <Format />
         <Syllabus />
-        <Samples />
         <Sessions />
         <ShowTell />
         <Certificate />

@@ -2,25 +2,12 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NAV, REGISTER_URL } from '../data';
 import { linkProps } from '../ui/primitives';
+import { BuildathonLogo } from '../ui/BuildathonLogo';
 
-export function Wordmark({ dark = false }: { dark?: boolean }) {
+export function Wordmark({ large = false }: { large?: boolean }) {
   return (
-    <a href="#top" className="group flex items-center gap-2.5" aria-label="MyDigital Build-a-thon home">
-      <span className="grid size-9 place-items-center rounded-[10px] bg-brand-gradient font-mono text-sm font-bold text-white">
-        {'</>'}
-      </span>
-      <span className="flex flex-col whitespace-nowrap font-display uppercase leading-none">
-        <span
-          className={`text-[10px] font-bold tracking-[0.22em] ${dark ? 'text-white/70' : 'text-slate'}`}
-        >
-          MyDigital
-        </span>
-        <span
-          className={`mt-1 text-[17px] font-black tracking-tight ${dark ? 'text-white' : 'text-ink'}`}
-        >
-          Build<span className={dark ? 'text-[#c9a8ff]' : 'text-brand'}>-a-thon</span>
-        </span>
-      </span>
+    <a href="#top" className="flex items-center" aria-label="MyDigital Build-a-thon home">
+      <BuildathonLogo className={large ? 'h-16 sm:h-20' : 'h-10 sm:h-11'} />
     </a>
   );
 }
@@ -45,7 +32,7 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Wordmark dark={!solid} />
+        <Wordmark />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {NAV.map((n) => (

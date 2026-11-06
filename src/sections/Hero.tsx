@@ -5,9 +5,9 @@ import { ButtonLink, Container } from '../ui/primitives';
 import { REGISTER_URL, SEATS_PER_SESSION } from '../data';
 
 const META = [
-  { icon: CalendarDays, text: '17–19 November 2026' },
-  { icon: MapPin, text: 'MITEC, Kuala Lumpur' },
-  { icon: Users, text: `${SEATS_PER_SESSION} seats per session` },
+  { icon: CalendarDays, label: 'When', value: '17–19 Nov 2026', sub: 'Tuesday – Thursday' },
+  { icon: MapPin, label: 'Where', value: 'MITEC', sub: 'Kuala Lumpur · Smart Nation' },
+  { icon: Users, label: 'Seats', value: `${SEATS_PER_SESSION} per session`, sub: 'First come, first served' },
 ];
 
 /** Shared Depth Text settings so both title lines tilt and orbit together. */
@@ -83,25 +83,32 @@ export default function Hero() {
           <ButtonLink href={REGISTER_URL}>
             Reserve your seat <ArrowRight size={16} />
           </ButtonLink>
-          <ButtonLink href="#samples" variant="ghost-dark">
-            See what you&rsquo;ll build
+          <ButtonLink href="#format" variant="ghost-dark">
+            How it works
           </ButtonLink>
         </div>
 
-        <ul
-          className="rise-in mt-10 flex flex-wrap justify-center gap-2.5"
+        {/* Event facts: stacked rows on phones, three columns from sm up */}
+        <dl
+          className="rise-in glass mt-12 grid w-full max-w-3xl divide-y divide-white/10 rounded-[24px] text-left sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:text-center"
           style={{ animationDelay: '0.45s' }}
         >
-          {META.map(({ icon: Icon, text }) => (
-            <li
-              key={text}
-              className="glass flex items-center gap-2 rounded-full px-3.5 py-2 text-[13px] font-medium text-white/85"
+          {META.map(({ icon: Icon, label, value, sub }) => (
+            <div
+              key={label}
+              className="flex items-center gap-4 px-5 py-4 sm:flex-col sm:gap-3 sm:px-4 sm:py-6"
             >
-              <Icon size={15} className="text-[#c9a8ff]" />
-              {text}
-            </li>
+              <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-white/10 text-[#d9c2ff] ring-1 ring-white/10">
+                <Icon size={20} />
+              </span>
+              <div className="min-w-0">
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">{label}</dt>
+                <dd className="mt-1 font-display text-lg font-bold leading-tight text-white sm:text-xl">{value}</dd>
+                <dd className="mt-0.5 text-[13px] text-white/60">{sub}</dd>
+              </div>
+            </div>
           ))}
-        </ul>
+        </dl>
       </Container>
     </section>
   );

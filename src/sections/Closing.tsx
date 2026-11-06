@@ -2,8 +2,8 @@ import { useId, useState } from 'react';
 import { ArrowRight, Plus } from 'lucide-react';
 import GradientASCII from '../components/backgrounds/GradientASCII';
 import { ButtonLink, Container, SectionTitle } from '../ui/primitives';
-import { OrganiserChip } from '../ui/Organisers';
-import { FAQS, NAV, REGISTER_URL } from '../data';
+import { OrganiserLogos } from '../ui/Organisers';
+import { FAQS, NAV, REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
 import { Wordmark } from './Nav';
 
 function FaqItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
@@ -100,7 +100,7 @@ export function FinalCta() {
               <span className="text-[#c9a8ff]">Leave with a shipped tool.</span>
             </span>
           }
-          lead="5 sessions, 100 seats each, zero winners and everybody wins. See you at the MyDigital Build-a-thon."
+          lead={`${SESSIONS.length} sessions, ${SEATS_PER_SESSION} seats each, zero winners and everybody wins. See you at the MyDigital Build-a-thon.`}
         />
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <ButtonLink href={REGISTER_URL} variant="white">
@@ -121,10 +121,10 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-8 border-t border-white/10 pt-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-            <Wordmark dark />
+            <Wordmark large />
             <div className="flex flex-col gap-2">
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">Organised by</span>
-              <OrganiserChip size="sm" />
+              <OrganiserLogos />
             </div>
             <p className="text-sm text-white/60 sm:self-end sm:pb-2">In conjunction with Smart Nation</p>
           </div>

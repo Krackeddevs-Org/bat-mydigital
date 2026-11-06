@@ -1,9 +1,9 @@
 import { Hammer, Lightbulb, Mic2, Rocket, Trophy } from 'lucide-react';
 import { Container, Logo, SectionTitle } from '../ui/primitives';
-import { LOGOS, SEATS_PER_SESSION } from '../data';
+import { LOGOS, SEATS_PER_SESSION, SESSIONS } from '../data';
 
 const STATS = [
-  { value: '5', label: 'sessions over 3 days' },
+  { value: String(SESSIONS.length), label: 'sessions over 3 days' },
   { value: String(SEATS_PER_SESSION), label: 'seats per session' },
   { value: '3 hrs', label: 'of hands-on building' },
   { value: '0', label: 'winners. Everybody wins' },
@@ -54,20 +54,21 @@ export function StatsStrip() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-center justify-center gap-x-12 gap-y-6 sm:flex-row sm:flex-wrap">
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
+      {/* Phones/small tablets: each label on its own centred row with its logos below. md+: one row. */}
+      <div className="mt-10 flex flex-col items-center justify-center gap-x-12 gap-y-8 text-center md:flex-row md:flex-wrap">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-5">
           <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Organised by</span>
-          <div className="flex items-center gap-5">
-            <Logo logo={LOGOS.mydigital} className="h-8 sm:h-9" />
-            <Logo logo={LOGOS.krackeddevs} className="h-8 sm:h-9" />
+          <div className="flex items-center justify-center gap-5">
+            <Logo logo={LOGOS.mydigital} className="h-8 md:h-9" />
+            <Logo logo={LOGOS.krackeddevs} className="h-8 md:h-9" />
           </div>
         </div>
-        <span className="hidden h-8 w-px bg-line sm:block" aria-hidden />
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
+        <span className="hidden h-8 w-px bg-line md:block" aria-hidden />
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-5">
           <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Build with</span>
-          <div className="flex items-center gap-5">
-            <Logo logo={LOGOS.ilmuchat} className="h-6 sm:h-7" />
-            <Logo logo={LOGOS.ilmucode} className="h-6 sm:h-7" />
+          <div className="flex items-center justify-center gap-5">
+            <Logo logo={LOGOS.ilmuchat} className="h-6 md:h-7" />
+            <Logo logo={LOGOS.ilmucode} className="h-6 md:h-7" />
           </div>
         </div>
       </div>

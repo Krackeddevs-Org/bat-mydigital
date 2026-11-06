@@ -60,8 +60,25 @@ body { background: #fff; color: var(--color-body); font-family: var(--font-sans)
 @keyframes caret { 50% { opacity: 0; } }
 .caret { animation: caret 1s steps(1) infinite; }
 
+/* Build-a-thon logo: colour sweep across the letter faces */
+.bat-logo__tint {
+  background-image: linear-gradient(100deg, #8c00ff 0%, #446eff 25%, #25a0e2 50%, #c9a8ff 75%, #8c00ff 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  mix-blend-mode: multiply;
+  -webkit-mask: url('/logos/buildathon-face.png') center / 100% 100% no-repeat;
+  mask: url('/logos/buildathon-face.png') center / 100% 100% no-repeat;
+  animation: bat-logo-sweep 7s linear infinite;
+}
+.bat-logo:hover .bat-logo__tint { animation-duration: 2.5s; }
+@keyframes bat-logo-sweep {
+  from { background-position: 0% 0; }
+  to { background-position: 200% 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise-in { animation: none; opacity: 1; }
   .caret { animation: none; }
+  .bat-logo__tint { animation: none; }
   html { scroll-behavior: auto; }
 }
