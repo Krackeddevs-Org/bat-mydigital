@@ -1,5 +1,6 @@
 import { BatteryCharging, GraduationCap, Laptop, Ticket } from 'lucide-react';
 import { Container, SectionTitle } from '../ui/primitives';
+import { reveal } from '../ui/reveal';
 import { CertificateMock } from '../ui/CertificateMock';
 import { SEATS_PER_SESSION } from '../data';
 
@@ -42,8 +43,8 @@ export default function Certificate() {
           }
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {ESSENTIALS.map(({ icon: Icon, icon2: Icon2, title, body }) => (
-            <article key={title} className="card p-7">
+          {ESSENTIALS.map(({ icon: Icon, icon2: Icon2, title, body }, i) => (
+            <article key={title} {...reveal(i)} className="card p-7">
               <div className="flex gap-2">
                 <span className="grid size-12 place-items-center rounded-2xl bg-lav text-brand">
                   <Icon size={22} />
@@ -77,6 +78,7 @@ export default function Certificate() {
               {STEPS.map((s, i) => (
                 <li
                   key={s.n}
+                  {...reveal(i, 80)}
                   className={`flex gap-4 rounded-2xl border p-4 ${
                     i === STEPS.length - 1 ? 'border-transparent bg-ink text-white' : 'border-line bg-white'
                   }`}
@@ -96,7 +98,7 @@ export default function Certificate() {
               ))}
             </ol>
           </div>
-          <div className="lg:pl-6">
+          <div {...reveal(1)} className="lg:pl-6">
             <CertificateMock />
           </div>
         </div>

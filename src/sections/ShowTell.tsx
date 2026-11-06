@@ -1,5 +1,6 @@
 import { Mic2 } from 'lucide-react';
 import { Container, SectionTitle } from '../ui/primitives';
+import { reveal } from '../ui/reveal';
 
 export default function ShowTell() {
   return (
@@ -15,7 +16,7 @@ export default function ShowTell() {
             }
             lead="Participants share their projects: the problem, the tool, the bug that almost broke them and what they learned. Two minutes each, no slides needed, and the room cheers for everyone."
           />
-          <ul className="mt-8 space-y-3 text-[15px] text-ink">
+          <ul {...reveal(1)} className="mt-8 space-y-3 text-[15px] text-ink">
             {['What problem did you pick?', 'Show it working, live', 'One thing you learned'].map((q, i) => (
               <li key={q} className="flex items-center gap-3">
                 <span className="grid size-7 place-items-center rounded-lg bg-white font-mono text-xs font-bold text-brand shadow-soft">
@@ -27,7 +28,7 @@ export default function ShowTell() {
           </ul>
         </div>
 
-        <div className="relative sm:pb-12">
+        <div {...reveal(1)} className="relative sm:pb-12">
           <figure className="overflow-hidden rounded-[28px] border border-line bg-white shadow-lift">
             <img
               src="/illustrations/show-and-tell-stage.webp"

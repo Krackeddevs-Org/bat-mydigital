@@ -1,6 +1,7 @@
 import { Hammer, Lightbulb, Mic2, Rocket, Trophy } from 'lucide-react';
 import { Container, Logo, SectionTitle } from '../ui/primitives';
 import { LOGOS, SEATS_PER_SESSION, SESSIONS } from '../data';
+import { reveal } from '../ui/reveal';
 
 const STATS = [
   { value: String(SESSIONS.length), label: 'sessions over 3 days' },
@@ -43,7 +44,7 @@ const STEPS = [
 export function StatsStrip() {
   return (
     <Container className="relative z-10 -mt-24 lg:-mt-28">
-      <div className="shadow-lift grid grid-cols-2 gap-px overflow-hidden rounded-[24px] bg-line lg:grid-cols-4">
+      <div {...reveal()} className="shadow-lift grid grid-cols-2 gap-px overflow-hidden rounded-[24px] bg-line lg:grid-cols-4">
         {STATS.map((s) => (
           <div key={s.label} className="bg-white px-5 py-6 sm:px-7 sm:py-8">
             <p className="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">
@@ -55,7 +56,7 @@ export function StatsStrip() {
       </div>
 
       {/* Phones/small tablets: each label on its own centred row with its logos below. md+: one row. */}
-      <div className="mt-10 flex flex-col items-center justify-center gap-x-12 gap-y-8 text-center md:flex-row md:flex-wrap">
+      <div {...reveal(1)} className="mt-10 flex flex-col items-center justify-center gap-x-12 gap-y-8 text-center md:flex-row md:flex-wrap">
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-5">
           <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Organised by</span>
           <div className="flex items-center justify-center gap-5">
@@ -89,7 +90,7 @@ export default function Format() {
               </>
             }
           />
-          <div className="space-y-5 text-base leading-relaxed text-slate sm:text-lg lg:pt-9">
+          <div {...reveal(1)} className="space-y-5 text-base leading-relaxed text-slate sm:text-lg lg:pt-9">
             <p>
               No judges, no podium, no pitching for prizes. The MyDigital Build-a-thon is a <em>learn-build-ship</em> workshop:
               you bring a problem from your daily work and leave with a working tool that solves it.
@@ -103,7 +104,7 @@ export default function Format() {
 
         <ol className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map(({ icon: Icon, k, img, alt, body }, i) => (
-            <li key={k} className="card group relative flex flex-col p-2.5 transition-transform hover:-translate-y-1">
+            <li key={k} {...reveal(i)} className="card group relative flex flex-col p-2.5 transition-transform hover:-translate-y-1">
               <div className="relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-[20px] bg-lav">
                   <img
@@ -130,7 +131,7 @@ export default function Format() {
           ))}
         </ol>
 
-        <div className="mt-6 flex flex-col items-start gap-4 rounded-[24px] bg-ink px-7 py-6 text-white sm:flex-row sm:items-center">
+        <div {...reveal()} className="mt-6 flex flex-col items-start gap-4 rounded-[24px] bg-ink px-7 py-6 text-white sm:flex-row sm:items-center">
           <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/10">
             <Trophy size={20} className="text-[#c9a8ff]" />
           </span>

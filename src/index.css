@@ -60,6 +60,58 @@ body { background: #fff; color: var(--color-body); font-family: var(--font-sans)
 @keyframes caret { 50% { opacity: 0; } }
 .caret { animation: caret 1s steps(1) infinite; }
 
+/* Reveal on scroll: elements tagged data-reveal fade + rise in once (see src/ui/reveal.ts).
+   translate/colour/shadow keep short, undelayed transitions so hover effects stay snappy. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition-property: opacity, transform, translate, background-color, border-color, box-shadow;
+  transition-duration: 0.75s, 0.75s, 0.3s, 0.3s, 0.3s, 0.3s;
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0s, 0s, 0s, 0s;
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Mobile menu: React Bits Staggered Menu, themed (see src/sections/Nav.tsx) */
+.bat-menu .staggered-menu-panel {
+  background:
+    radial-gradient(ellipse 80% 50% at 85% 10%, rgba(140, 0, 255, 0.28), transparent 70%),
+    radial-gradient(ellipse 70% 40% at 0% 100%, rgba(68, 110, 255, 0.2), transparent 70%),
+    #120830;
+  padding: 6.5rem 1.5rem 2rem;
+}
+.bat-menu .sm-panel-list { gap: 0.35rem; }
+.bat-menu .sm-panel-item {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.1rem, 10.5vw, 3.75rem);
+  letter-spacing: -0.04em;
+  padding: 0.12em 2.25rem 0.12em 0;
+}
+.bat-menu .sm-panel-item:hover,
+.bat-menu .sm-panel-item.is-active { color: #c9a8ff; }
+.bat-menu .sm-panel-list[data-numbering] .sm-panel-item::after {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c9a8ff;
+}
+.bat-menu .sm-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 /* Build-a-thon logo: colour sweep across the letter faces */
 .bat-logo__tint {
   background-image: linear-gradient(100deg, #8c00ff 0%, #446eff 25%, #25a0e2 50%, #c9a8ff 75%, #8c00ff 100%);
@@ -80,5 +132,6 @@ body { background: #fff; color: var(--color-body); font-family: var(--font-sans)
   .rise-in { animation: none; opacity: 1; }
   .caret { animation: none; }
   .bat-logo__tint { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }

@@ -3,6 +3,7 @@ import { ArrowRight, Plus } from 'lucide-react';
 import GradientASCII from '../components/backgrounds/GradientASCII';
 import { ButtonLink, Container, SectionTitle } from '../ui/primitives';
 import { OrganiserLogos } from '../ui/Organisers';
+import { reveal } from '../ui/reveal';
 import { FAQS, NAV, REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
 import { Wordmark } from './Nav';
 
@@ -65,7 +66,9 @@ export function Faq() {
         <SectionTitle eyebrow="FAQ" title="Questions, answered." lead="Anything else? Ask a mentor on the day." />
         <div className="space-y-3">
           {FAQS.map((f, i) => (
-            <FaqItem key={f.q} q={f.q} a={f.a} open={open === i} onToggle={() => setOpen(open === i ? null : i)} />
+            <div key={f.q} {...reveal(i, 70)}>
+              <FaqItem q={f.q} a={f.a} open={open === i} onToggle={() => setOpen(open === i ? null : i)} />
+            </div>
           ))}
         </div>
       </Container>
@@ -102,7 +105,7 @@ export function FinalCta() {
           }
           lead={`${SESSIONS.length} sessions, ${SEATS_PER_SESSION} seats each, zero winners and everybody wins. See you at the MyDigital Build-a-thon.`}
         />
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div {...reveal(1)} className="mt-10 flex flex-wrap justify-center gap-3">
           <ButtonLink href={REGISTER_URL} variant="white">
             Reserve your seat <ArrowRight size={16} />
           </ButtonLink>

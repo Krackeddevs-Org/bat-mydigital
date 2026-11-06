@@ -6,8 +6,10 @@ import Sessions from './sections/Sessions';
 import ShowTell from './sections/ShowTell';
 import Certificate from './sections/Certificate';
 import { Faq, FinalCta, Footer } from './sections/Closing';
+import { useRevealOnScroll } from './ui/reveal';
 
 export default function App() {
+  useRevealOnScroll();
   return (
     <>
       <a

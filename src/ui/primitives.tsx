@@ -52,7 +52,7 @@ export function SectionTitle({
   center?: boolean;
 }) {
   return (
-    <div className={`max-w-3xl ${center ? 'mx-auto text-center' : ''}`}>
+    <div data-reveal="" className={`max-w-3xl ${center ? 'mx-auto text-center' : ''}`}>
       <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
       <h2
         className={`mt-3 font-display text-3xl font-bold leading-[1.15] tracking-tight text-balance sm:text-4xl lg:text-[2.75rem] ${

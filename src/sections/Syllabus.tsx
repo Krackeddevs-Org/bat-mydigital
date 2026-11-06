@@ -1,6 +1,7 @@
 import Topography from '../components/backgrounds/Topography';
 import { Container, SectionTitle, ToolTag } from '../ui/primitives';
 import { MODULES } from '../data';
+import { reveal } from '../ui/reveal';
 
 export default function Syllabus() {
   return (
@@ -37,9 +38,10 @@ export default function Syllabus() {
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {MODULES.map((m) => (
+          {MODULES.map((m, i) => (
             <article
               key={m.n}
+              {...reveal(i % 3)}
               className="card relative flex flex-col overflow-hidden bg-white/90 p-7 backdrop-blur transition-transform hover:-translate-y-1"
             >
               {/* Phones: oversized outlined numeral that fills the card height, behind the text */}
@@ -79,7 +81,7 @@ export default function Syllabus() {
               </div>
             </article>
           ))}
-          <article className="flex flex-col justify-between rounded-[28px] bg-brand-gradient p-7 text-white shadow-[0_30px_60px_rgba(71,118,230,0.3)]">
+          <article {...reveal(2)} className="flex flex-col justify-between rounded-[28px] bg-brand-gradient p-7 text-white shadow-[0_30px_60px_rgba(71,118,230,0.3)]">
             <p className="font-display text-2xl font-bold leading-snug">
               Bring a problem.
               <br />
