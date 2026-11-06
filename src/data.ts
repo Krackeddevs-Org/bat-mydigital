@@ -39,53 +39,6 @@ export const SESSIONS: Session[] = [
 
 export const SEATS_PER_SESSION = 100;
 
-export const GCCOV = [
-  {
-    letter: 'G',
-    word: 'Goal',
-    question: 'What do you want, in one sentence?',
-    tip: 'Name the thing and who it is for. Vague goals get vague apps.',
-    weak: 'Make me an app.',
-    strong: 'Build a leave-request tracker for my 25-person unit.',
-  },
-  {
-    letter: 'C',
-    word: 'Context',
-    question: 'What is happening today?',
-    tip: 'Describe the current mess. The AI cannot see your office.',
-    weak: '(nothing)',
-    strong:
-      'Staff send leave requests over WhatsApp. Our admin re-types them into Excel every Friday and requests get lost.',
-  },
-  {
-    letter: 'C',
-    word: 'Constraint',
-    question: 'What are the rules and limits?',
-    tip: 'This is where responsible AI lives: data, privacy, access.',
-    weak: 'Make it good.',
-    strong:
-      'Mobile-friendly. Do not store IC numbers. Only managers can approve. Labels in Bahasa Melayu.',
-  },
-  {
-    letter: 'O',
-    word: 'Output',
-    question: 'What exactly should come back?',
-    tip: 'Say the format: one page, a table, full code, a checklist.',
-    weak: 'Give me something.',
-    strong:
-      'One web page with a request form, a list with status, and approve / reject buttons. Give me the full code.',
-  },
-  {
-    letter: 'V',
-    word: 'Verify',
-    question: 'How will you know it is right?',
-    tip: 'Ask for test cases, then actually run them before you ship.',
-    weak: '(trust it blindly)',
-    strong:
-      'Then list 5 test cases, including a staff member trying to approve their own leave.',
-  },
-];
-
 export const MODULES = [
   {
     n: '01',
