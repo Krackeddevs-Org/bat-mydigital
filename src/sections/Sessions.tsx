@@ -1,7 +1,7 @@
-import { ArrowUpRight, Ban, Clock, MapPin, Sun, Sunset, Users } from 'lucide-react';
+import { ArrowUpRight, Ban, Clock, Sun, Sunset, Users } from 'lucide-react';
 import SlicedWaves from '../components/backgrounds/SlicedWaves';
-import { Container, Logo, SectionTitle, linkProps } from '../ui/primitives';
-import { LOGOS, REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
+import { Container, SectionTitle, linkProps } from '../ui/primitives';
+import { REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
 import { reveal } from '../ui/reveal';
 
 export default function Sessions() {
@@ -37,14 +37,6 @@ export default function Sessions() {
             }
             lead="Each 2.5-hour session is a complete learn-build-ship cycle, ending with Show & Tell. Pick the one that fits your schedule. Seats are first come, first served."
           />
-          <div {...reveal(1)} className="glass flex shrink-0 items-start gap-3 rounded-2xl p-5 lg:max-w-xs">
-            <MapPin size={20} className="mt-0.5 shrink-0 text-[#c9a8ff]" />
-            <div>
-              <p className="font-semibold">MITEC, Kuala Lumpur</p>
-              <p className="mt-1 text-sm text-white/65">Held in conjunction with</p>
-              <Logo logo={LOGOS.smartNationWhite} className="mt-2.5 h-10" />
-            </div>
-          </div>
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">

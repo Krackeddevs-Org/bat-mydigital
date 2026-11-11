@@ -131,7 +131,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">In conjunction with</span>
-              <Logo logo={LOGOS.smartNationWhite} className="h-9" />
+              <Logo logo={LOGOS.smartNationWhite} className="h-9 self-start" />
             </div>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">

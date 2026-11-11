@@ -13,7 +13,7 @@ export function Logo({
   logo: (typeof LOGOS)[keyof typeof LOGOS];
   className?: string;
 }) {
-  return <img src={logo.src} alt={logo.alt} className={`block w-auto select-none ${className}`} draggable={false} />;
+  return <img src={logo.src} alt={logo.alt} className={`block w-auto shrink-0 select-none object-contain object-left ${className}`} draggable={false} />;
 }
 
 /** Tag that shows the official ILMU logo for ILMUchat / ILMUcode, plain text otherwise. */

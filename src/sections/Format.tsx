@@ -55,22 +55,33 @@ export function StatsStrip() {
         ))}
       </div>
 
-      {/* Phones/small tablets: each label on its own centred row with its logos below. md+: one row. */}
-      <div {...reveal(1)} className="mt-10 flex flex-col items-center justify-center gap-x-12 gap-y-8 text-center md:flex-row md:flex-wrap">
-        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-5">
-          <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Organised by</span>
+      {/* Phones: stacked rows. md+: groups side by side, wrapping as needed. xl+: one row with dividers. */}
+      <div
+        {...reveal(1)}
+        className="mt-10 flex flex-col items-center justify-center gap-x-8 gap-y-8 text-center md:flex-row md:flex-wrap md:gap-y-6"
+      >
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-4">
+          <span className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Organised by</span>
           <div className="flex items-center justify-center gap-5">
             <Logo logo={LOGOS.mydigital} className="h-8 md:h-9" />
             <Logo logo={LOGOS.krackeddevs} className="h-8 md:h-9" />
           </div>
         </div>
-        <span className="hidden h-8 w-px bg-line md:block" aria-hidden />
-        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-5">
-          <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Build with</span>
+        <span className="hidden h-8 w-px bg-line xl:block" aria-hidden />
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-4">
+          <span className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.14em] text-muted">Build with</span>
           <div className="flex items-center justify-center gap-5">
             <Logo logo={LOGOS.ilmuchat} className="h-6 md:h-7" />
             <Logo logo={LOGOS.ilmucode} className="h-6 md:h-7" />
           </div>
+        </div>
+        <span className="hidden h-8 w-px bg-line xl:block" aria-hidden />
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-4">
+          <span className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.14em] text-muted">In conjunction with</span>
+          {/* Official logo is white-on-dark only, so it sits on a night-violet tile */}
+          <span className="inline-flex shrink-0 items-center rounded-xl bg-night px-3 py-1">
+            <Logo logo={LOGOS.smartNationWhite} className="h-10" />
+          </span>
         </div>
       </div>
     </Container>
