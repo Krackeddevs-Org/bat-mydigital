@@ -6,7 +6,7 @@ import { reveal } from '../ui/reveal';
 const STATS = [
   { value: String(SESSIONS.length), label: 'sessions over 3 days' },
   { value: String(SEATS_PER_SESSION), label: 'seats per session' },
-  { value: '3 hrs', label: 'of hands-on building' },
+  { value: '2.5 hrs', label: 'of hands-on building' },
   { value: '0', label: 'winners. Everybody wins' },
 ];
 

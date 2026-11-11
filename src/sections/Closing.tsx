@@ -1,10 +1,10 @@
 import { useId, useState } from 'react';
 import { ArrowRight, Plus } from 'lucide-react';
 import GradientASCII from '../components/backgrounds/GradientASCII';
-import { ButtonLink, Container, SectionTitle } from '../ui/primitives';
+import { ButtonLink, Container, Logo, SectionTitle } from '../ui/primitives';
 import { OrganiserLogos } from '../ui/Organisers';
 import { reveal } from '../ui/reveal';
-import { FAQS, NAV, REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
+import { FAQS, LOGOS, NAV, REGISTER_URL, SEATS_PER_SESSION, SESSIONS } from '../data';
 import { Wordmark } from './Nav';
 
 function FaqItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
@@ -129,7 +129,10 @@ export function Footer() {
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">Organised by</span>
               <OrganiserLogos />
             </div>
-            <p className="text-sm text-white/60 sm:self-end sm:pb-2">In conjunction with Smart Nation</p>
+            <div className="flex flex-col gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">In conjunction with</span>
+              <Logo logo={LOGOS.smartNationWhite} className="h-9" />
+            </div>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
             {NAV.map((n) => (

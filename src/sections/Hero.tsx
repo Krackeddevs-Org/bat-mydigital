@@ -1,12 +1,12 @@
 import { ArrowRight, CalendarDays, MapPin, Users } from 'lucide-react';
 import WebThreads from '../components/backgrounds/WebThreads';
 import DepthText from '../components/text/DepthText';
-import { ButtonLink, Container } from '../ui/primitives';
-import { REGISTER_URL, SEATS_PER_SESSION } from '../data';
+import { ButtonLink, Container, Logo } from '../ui/primitives';
+import { LOGOS, REGISTER_URL, SEATS_PER_SESSION } from '../data';
 
 const META = [
   { icon: CalendarDays, label: 'When', value: '17–19 Nov 2026', sub: 'Tuesday – Thursday' },
-  { icon: MapPin, label: 'Where', value: 'MITEC', sub: 'Kuala Lumpur · Smart Nation' },
+  { icon: MapPin, label: 'Where', value: 'MITEC', sub: 'Kuala Lumpur' },
   { icon: Users, label: 'Seats', value: `${SEATS_PER_SESSION} per session`, sub: 'First come, first served' },
 ];
 
@@ -109,6 +109,14 @@ export default function Hero() {
             </div>
           ))}
         </dl>
+
+        <div
+          className="rise-in mt-6 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/55"
+          style={{ animationDelay: '0.55s' }}
+        >
+          In conjunction with
+          <Logo logo={LOGOS.smartNationWhite} className="h-9" />
+        </div>
       </Container>
     </section>
   );

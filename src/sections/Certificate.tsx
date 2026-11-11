@@ -9,7 +9,7 @@ const ESSENTIALS = [
     icon: Laptop,
     icon2: BatteryCharging,
     title: 'Bring your laptop + charger',
-    body: 'You build on your own machine, so you keep everything you make. Three hours of building drains batteries: bring the charger.',
+    body: 'You build on your own machine, so you keep everything you make. A 2.5-hour build drains batteries: bring the charger.',
   },
   {
     icon: GraduationCap,

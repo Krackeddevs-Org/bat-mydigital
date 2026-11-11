@@ -5,6 +5,7 @@ export const REGISTER_URL =
 export const LOGOS = {
   mydigital: { src: '/logos/mydigital.png', alt: 'MyDIGITAL Corporation' },
   mydigitalWhite: { src: '/logos/mydigital-white.png', alt: 'MyDIGITAL Corporation' },
+  smartNationWhite: { src: '/logos/smart-nation-expo-white.png', alt: 'Smart Nation Expo' },
   mydigitalStacked: { src: '/logos/mydigital-stacked.png', alt: 'MyDIGITAL' },
   krackeddevs: { src: '/logos/krackeddevs.svg', alt: 'KrackedDevs' },
   ilmuMark: { src: '/logos/ilmu-mark.svg', alt: 'ILMU' },
@@ -25,19 +26,19 @@ export type Session = {
   id: string;
   day: string;
   date: string;
-  slot: 'Morning' | 'Afternoon';
+  slot: 'Morning' | 'Evening';
   time: string;
   /** No seats left: card shows Fully booked and no Register link. */
   full?: boolean;
 };
 
 export const SESSIONS: Session[] = [
-  { id: '01', day: 'Tue', date: '17 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM', full: true },
-  { id: '02', day: 'Tue', date: '17 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
-  { id: '03', day: 'Wed', date: '18 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
-  { id: '04', day: 'Wed', date: '18 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
-  { id: '05', day: 'Thu', date: '19 Nov', slot: 'Morning', time: '9:00 AM – 12:00 PM' },
-  { id: '06', day: 'Thu', date: '19 Nov', slot: 'Afternoon', time: '2:00 PM – 5:00 PM' },
+  { id: '01', day: 'Tue', date: '17 Nov', slot: 'Morning', time: '10:30 AM – 1:00 PM', full: true },
+  { id: '02', day: 'Tue', date: '17 Nov', slot: 'Evening', time: '2:30 PM – 5:00 PM' },
+  { id: '03', day: 'Wed', date: '18 Nov', slot: 'Morning', time: '10:30 AM – 1:00 PM' },
+  { id: '04', day: 'Wed', date: '18 Nov', slot: 'Evening', time: '2:30 PM – 5:00 PM' },
+  { id: '05', day: 'Thu', date: '19 Nov', slot: 'Morning', time: '10:30 AM – 1:00 PM' },
+  { id: '06', day: 'Thu', date: '19 Nov', slot: 'Evening', time: '2:30 PM – 5:00 PM' },
 ];
 
 export const SEATS_PER_SESSION = 100;
